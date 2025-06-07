@@ -14,7 +14,7 @@ We are given a dataset representing Mössbauer spectroscopic measurements from M
 
 - Analytical derivation of model function and its derivatives for Gaussian and Lorentzian cases
 - Construction of the Jacobian matrix \( G_k \) for each iteration
-- Implementation of the **steepest descent algorithm** with adaptive step size \( \varepsilon_k \)
+- Implementation of the **steepest descent algorithm** with adaptive step size \( ε_k \)
 - Use of model covariance \( C_M \) and data covariance \( C_D \) matrices
 - Comparison of model fits and convergence behavior
 
