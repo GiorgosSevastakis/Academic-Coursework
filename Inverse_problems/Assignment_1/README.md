@@ -1,6 +1,6 @@
 # Inverse Problems – Assignment 1
 
-This repository contains my submission for **Assignment 1** from the *Inverse Problems* course (October 2023). The task involves solving a **linear tomography problem** by analyzing the travel-time anomalies of acoustic waves passing through a subsurface medium.
+This repository contains my submission for **Assignment 1** from the *Inverse Problems* course (April 2024). The task involves solving a **linear tomography problem** by analyzing the travel-time anomalies of acoustic waves passing through a subsurface medium.
 
 ---
 
@@ -35,9 +35,9 @@ We solve both the **forward problem** (computing travel-time anomalies) and the 
 
 ## Files
 
-- `code.ipynb`: The code/solution of he problem at hand
+- `code.ipynb`: The code/solution of the problem at hand
 - `report.pdf`: Report describing the approach and findings
-- `instructions.pdf`: Original assignment handout
+- `instructions.pdf`: Assignment prompt
 - `requirements.txt`: Python dependencies
 
 ---
@@ -45,7 +45,7 @@ We solve both the **forward problem** (computing travel-time anomalies) and the 
 ## How to Run
 ```bash
 pip install -r requirements.txt
-jupyter notebook notebooks/Assignment_1_Inverse.ipynb
+jupyter notebook code.ipynb
 ```
 ---
 
@@ -53,4 +53,4 @@ jupyter notebook notebooks/Assignment_1_Inverse.ipynb
 
 **Georgios Sevastakis**  
 MSc Student, Computational Physics
-October 2023
+April 2024
