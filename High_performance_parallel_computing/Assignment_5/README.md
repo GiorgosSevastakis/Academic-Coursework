@@ -1,6 +1,6 @@
 # High Performance Parallel Computing – Assignment 5
 
-This assignment contains the submission for **Assignment 5** from the *High Performance Parallel Computing* course (March 2024). The task involved parallelizing a **shallow water simulation** using OpenACC starting from a provided sequential implementation, and analyzing the performance through profiling and scaling experiments.
+This assignment contains the submission for **Assignment 5** from the *High Performance Parallel Computing* course (March 2024). The task involved parallelizing a **shallow water simulation** using OpenACC starting from a provided sequential implementation, and analyzing the performance through profiling and scaling experiments. The code was run using SLURM, but the Makefile was modified so that it can be run locally (the profiling and the strong scaling).
 
 ---
 
@@ -68,7 +68,7 @@ make -f Makefile
 make -f Makefile profile
 ```
 
-### Create the Strong.csv 
+### Create the Strong.csv only
 ```bash
 make -f Makefile timecsv
 
