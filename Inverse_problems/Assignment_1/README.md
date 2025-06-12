@@ -1,91 +1,57 @@
-# High Performance Parallel Computing – Assignment 1
+# Inverse Problems – Assignment 1
 
-This folder contains my submission for **Assignment 1** from the *High Performance Parallel Computing* course (February 2024). The task involves solving the **SIR epidemiological model** numerically and analyzing disease spread in a closed population using C++.
+This assignment contains my submission for **Assignment 1** from the *Inverse Problems* course (April 2024). The task involves solving a **linear tomography problem** by analyzing the travel-time anomalies of acoustic waves passing through a subsurface medium.
 
 ---
 
 ## Problem Summary
 
-We study the classical **SIR model**, which describes the time evolution of three compartments:
-- **S(t)**: Susceptible individuals
-- **I(t)**: Infected individuals
-- **R(t)**: Recovered individuals
+We simulate the arrival times of waves from two sources detected by 12 receivers across a discretized 13×11 m^2 domain. A high-velocity inclusion in the medium causes deviations (anomalies) in travel time, which are used to infer the internal structure.
 
-The dynamics are governed by the following ODEs:
-
-```
-dS/dt = -β * I * S / N  
-dI/dt = β * I * S / N - γ * I  
-dR/dt = γ * I
-```
-
-where:
-- `β = 1/5` days⁻¹: infection rate
-- `γ = 1/10` days⁻¹: recovery rate
-- `N = 1000`: total population  
-- Initial condition: `S(0)=999`, `I(0)=1`, `R(0)=0`
-
-We simulate the epidemic over **300 days** using the **forward Euler method** and analyze the evolution of the three compartments.
+We solve both the **forward problem** (computing travel-time anomalies) and the **inverse problem** (reconstructing the slowness anomaly field).
 
 ---
 
 ## Methods Used
 
-- Numerical integration with forward Euler method
-- Time discretization: `dt = 0.1` days
-- Storage and output of S, I, R values into text file
-- Plotting of time evolution using Python/Matplotlib
-- Estimation of **critical vaccination threshold** to prevent outbreak
-- Sensitivity analysis of time step, model parameters, and validation checks
+- Discretization of ray paths through a grid of 1x1 m^2 squares
+- Analytical computation of travel-time anomalies
+- Construction of a linear system `d = G·m`, where:
+  - `d` is the data vector (arrival-time anomalies)
+  - `G` is the path matrix (ray lengths per cell)
+  - `m` is the slowness anomaly field
+- **Tikhonov Regularization** to solve the ill-posed inverse problem under Gaussian noise
+- Evaluation of resolution via delta function recovery
 
 ---
 
 ## Key Observations
 
-- Epidemic peaks around day 70 and ends by day 160
-- Vaccinating at least **500 individuals** prevents an outbreak (`S(0) < 500`)
-- Time step `dt = 0.1` balances accuracy and computational efficiency
-- β and γ may vary in practice; their uncertainty impacts predictions
-- Multiple checks were used to validate the model (e.g., total population conservation)
+- The forward model correctly captures the travel-time anomalies due to a known inclusion.
+- The inverse solution using Tikhonov regularization can reconstruct the anomaly, but introduces artifacts along ray paths, especially where detector coverage is sparse.
+- Adding more detectors or angular views would improve spatial resolution.
 
 ---
 
 ## Files
 
-- `code.cpp`: C++ implementation of SIR model
-- `plot_script.ipynb`: Python script to visualize the results
-- `report.pdf`: Full write-up of methodology and results
-- `instructions.pdf`: Assignment brief and problem description
+- `code.ipynb`: The code/solution of the problem at hand
+- `report.pdf`: Report describing the approach and findings
+- `instructions.pdf`: Assignment prompt
+- `requirements.txt`: Python dependencies
 
 ---
 
 ## How to Run
-
-### Compile and Run the Simulation
-
 ```bash
-g++ code.cpp -o sir_model
-./sir_model
+pip install -r requirements.txt
+jupyter notebook code.ipynb
 ```
-
-This generates `sir_output.txt`.
-
-### Plot the Results
-
-Open the notebook in Jupyter:
-
-```bash
-jupyter notebook plot_script.ipynb
-```
-
-Make sure `sir_output.txt` is in the same directory.
-
 ---
 
-## Authors
+## Author
 
-António Maschio  
-Dimitrios Anastasiou  
-Georgios Sevastakis
+**Georgios Sevastakis**  
+MSc Student, Computational Physics
 
-February 2024
+April 2024
