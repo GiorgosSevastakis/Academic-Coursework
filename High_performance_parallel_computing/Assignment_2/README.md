@@ -69,11 +69,11 @@ This will:
 
 ## Authors
 
-### Original code
+### Original sequential code
 
 Assistant Professor Weria Pezeshkian
 
-### Optimized code
+### Vectorized code
 
 António Maschio  
 Dimitrios Anastasiou  

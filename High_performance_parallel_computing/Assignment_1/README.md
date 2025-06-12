@@ -65,7 +65,7 @@ We simulate the epidemic over **300 days** using the **forward Euler method** an
 
 ```bash
 g++ code.cpp -o sir_model
-./sir_model
+./sir_model 
 ```
 
 This generates `sir_output.txt`.
@@ -75,6 +75,7 @@ This generates `sir_output.txt`.
 Open the notebook in Jupyter:
 
 ```bash
+pip install -r requirements.txt
 jupyter notebook plot_script.ipynb
 ```
 
