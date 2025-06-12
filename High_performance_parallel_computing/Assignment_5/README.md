@@ -1,6 +1,6 @@
 # High Performance Parallel Computing – Assignment 5
 
-This assignment contains the submission for **Assignment 5** from the *High Performance Parallel Computing* course (March 2024). The task involved parallelizing a **shallow water simulation** using OpenACC starting from a provided sequential implementation, and analyzing the performance through profiling and scaling experiments. The code was run using SLURM, but the Makefile was modified so that it can be run locally (the profiling and the strong scaling).
+This assignment contains the submission for **Assignment 5** from the *High Performance Parallel Computing* course (March 2024). The task involved parallelizing a **shallow water simulation** using OpenACC starting from a provided sequential implementation, and analyzing the performance through profiling and scaling experiments. The code was run using SLURM, but the Makefile was modified so that it can be run locally (the profiling and the strong scaling). The weak scaling data as extracted from SLURM are stored in a csv file in this folder. 
 
 ---
 
@@ -21,17 +21,16 @@ The assignment required us to:
 
 - OpenACC directives to parallelize core compute loops
 - Integration of ghost cell boundary logic directly into the compute kernel
-- Profiling with Nsight Compute CLI (`nv-nsight-cu-cli --clock-control none`)
-- Execution time benchmarking for increasing numbers of gangs
+- Profiling with Nsight Compute CLI
 - Strong and weak scaling experiments
 - Interpretation of scaling trends using **Amdahl's Law** and **Gustafson's Law**
-- Visualization of results in Jupyter using `plots.ipynb`
+- Visualization of results in Jupyter
 
 ---
 
 ## Key Observations
 
-- The final OpenACC version achieved better performance than the initial parallel attempt.
+- The final OpenACC version achieved better performance than the initial parallel attempt and significanlty better than the sequential one.
 - Moving boundary condition logic into the main kernel reduced synchronization and memory latency.
 - Profiling identified memory transfers and frequent kernel launches as key performance bottlenecks.
 - Strong scaling improved consistently up to 512 gangs but tapered at 1024 due to overhead saturation.
@@ -45,8 +44,7 @@ The assignment required us to:
 - `sw_sequential.cpp`: Provided sequential code
 - `sw_parallel_oldv.cpp`: Initial parallel version with boundary conditions outside compute loop
 - `sw_parallel.cpp`: Final optimized OpenACC version
-- `Makefile`: Makefile for compilation and profiling automation (strong scaling only)
-- `Strong.csv`: Recorded execution times for powers-of-two `--numgangs` values
+- `Makefile`: Makefile for compilation and profiling automation
 - `Weak.csv`: Recorded execution times for increased workload and number of gangs
 - `plots.ipynb`: Jupyter notebook for speedup and efficiency plots
 - `ExternalFunctions.py`: Helper functions for formatting and output
@@ -57,6 +55,8 @@ The assignment required us to:
 ---
 
 ## How to Run
+
+**Note:** The default values for --numgangs in the Makefile may exceed what your local machine can handle. If you're not using a GPU-enabled cluster, reduce the gang sizes and adjust Weak.csv accordingly before generating plots.
 
 ### Compile all
 ```bash
