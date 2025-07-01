@@ -20,6 +20,7 @@ Simulations of stochastic systems using Euler and Gillespie methods. These inclu
 
 ### 🔹 Machine Learning
 A solo project covering classification, regression, and clustering. Implementations include XGBoost, TensorFlow, and PyTorch, with model explainability via SHAP/permutation importance and hyperparameter optimization using Bayesian search. Both supervised and unsupervised methods are demonstrated. A group project regarding segmentation and binary classification of gut cells/nuclei after the administration of a drug. The end-to-end pipeline includes preprocessing (Histogram Equalization, Outlier detection) as well as a CNN, XGBoost, Random Forest and a pretrained network (ResNet18).
+
 ---
 
 ## Author
