@@ -65,5 +65,6 @@ Repeat for `Exercise_2.ipynb` and `Exercise_3.ipynb` as needed.
 
 ## Author
 
-**Georgios Sevastakis**  
+Georgios Sevastakis
+
 June 2024
