@@ -18,16 +18,8 @@ Assignments span GPU programming with CUDA, OpenACC acceleration, and SIMD/OpenM
 ### 🔹 Diffusive and Stochastic Processes
 Simulations of stochastic systems using Euler and Gillespie methods. These include a Langevin dynamics system and SIR-like epidemic models with extensions for immunity and statistical ensemble analysis.
 
-### 🔹 Machine Learning *(Coming soon)*
-A separate README will be added summarizing the group project from the Machine Learning course.
-
----
-
-## Notes
-
-- Each assignment clearly states whether it was an individual or group project.
-- Some solutions re-implement core algorithms (e.g., LU decomposition, Gillespie method) to demonstrate low-level numerical understanding.
-
+### 🔹 Machine Learning
+A solo project covering classification, regression, and clustering. Implementations include XGBoost, TensorFlow, and PyTorch, with model explainability via SHAP/permutation importance and hyperparameter optimization using Bayesian search. Both supervised and unsupervised methods are demonstrated.
 ---
 
 ## Author
