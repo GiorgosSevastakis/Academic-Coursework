@@ -73,7 +73,7 @@ This will display a sequence of saved frames showing the system evolving from di
 ## Authors
 
 António Maschio,
-Cyan,
+Cyan Yong Ho Jo,
 Georgios Sevastakis,
 Sebastian Dreizler
 
